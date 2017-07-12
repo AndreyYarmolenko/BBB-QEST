@@ -1,0 +1,1 @@
+This is folder with source code for BBB - QEST project
