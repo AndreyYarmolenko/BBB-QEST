@@ -3,6 +3,7 @@ Ext.define('bbb_courier_model', {
     fields: ['id','login','role']
 });
 
+
 var bbb_courier_store = new Ext.data.Store({
 	    pageSize: 50,
         model: 'bbb_courier_model',
