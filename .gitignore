@@ -1,0 +1,11 @@
+#исключение settings.php
+settings.php
+
+
+#исключение папок ExtJS, files, img, mpdf60, telegram, import
+/ExtJS/*
+/files/*
+/img/*
+/mpdf60/*
+/telegram/*
+/import/*
