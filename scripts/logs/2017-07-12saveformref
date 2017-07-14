@@ -1,0 +1,292 @@
+
+
+============================ 12:04:36 ============================
+
+ -> 2017-07-12 12:04:36 QUERY: 
+SELECT jd.`id` as id_job_title, `job_title`, jd.`revision`, `status`, `create_date`, `id_department`, d.`name`, d.`id` as id_dep,`reports_to`, `flsa_status`, `prepared_by`, `prepared_date`, `summary`, `essential_duties`, `qualifications`,
+    	`education_experience`, `work_environment`, `work_environment`, `summary_end`, u.`name` as user_name, jd.`id_user_edit`
+              FROM `bb_job_description` AS jd
+              JOIN `bb_departments` AS d ON jd.`id_department` = d.`id`
+              JOIN `bb_users` AS u ON jd.`id_user_edit` = u.`id`
+              WHERE jd.`deleted` = 0 AND `job_title` = '' AND `status` = 'Approved'
+              GROUP BY `job_title`
+              ORDER BY `revision` DESC;
+
+
+
+============================ 12:04:57 ============================
+
+ -> 2017-07-12 12:04:57 QUERY: 
+SELECT jd.`id` as id_job_title, `job_title`, jd.`revision`, `status`, `create_date`, `id_department`, d.`name`, d.`id` as id_dep,`reports_to`, `flsa_status`, `prepared_by`, `prepared_date`, `summary`, `essential_duties`, `qualifications`,
+    	`education_experience`, `work_environment`, `work_environment`, `summary_end`, u.`name` as user_name, jd.`id_user_edit`
+              FROM `bb_job_description` AS jd
+              JOIN `bb_departments` AS d ON jd.`id_department` = d.`id`
+              JOIN `bb_users` AS u ON jd.`id_user_edit` = u.`id`
+              WHERE jd.`deleted` = 0 AND `job_title` = 'new job lalala' AND `status` = 'Approved'
+              GROUP BY `job_title`
+              ORDER BY `revision` DESC;
+
+
+
+============================ 12:04:58 ============================
+
+ -> 2017-07-12 12:04:58 QUERY: 
+SELECT jd.`id`, `job_title`, `job_title`, jd.`revision`, `status`, `create_date`, `id_department`, d.`name`, `reports_to`, `flsa_status`,
+                     `prepared_by`, `prepared_date`, `summary`, `essential_duties`, `qualifications`, `education_experience`, `work_environment`,
+                     `work_environment`, `summary_end`, u.`name` as user_name, jd.`id_user_edit`
+              FROM `bb_job_description` AS jd
+              JOIN `bb_users` AS u ON jd.`id_user_edit` = u.`id`
+              JOIN `bb_departments` AS d ON jd.`id_department` = d.`id`
+              WHERE jd.`id` = 38
+
+
+
+============================ 12:05:02 ============================
+
+ -> 2017-07-12 12:05:02 QUERY: 
+SELECT jd.`id`, `job_title`, jd.`revision`, `status`, `create_date`, `id_department`, d.`name`, `reports_to`, `flsa_status`,
+                     `prepared_by`, `prepared_date`, `summary`, `essential_duties`, `qualifications`, `education_experience`, `work_environment`,
+                     `work_environment`, `summary_end`,u.`id`, u.`name` as user_name
+              FROM `bb_job_description` AS jd
+              JOIN `bb_departments` AS d ON jd.`id_department` = d.`id`
+              JOIN `bb_users` AS u ON jd.`id_user_edit` = u.`id`
+              WHERE jd.`job_title` = 'new job lalala' AND jd.`revision` = 'c'
+
+
+
+============================ 12:05:02 ============================
+
+ -> 2017-07-12 12:05:02 QUERY: 
+SELECT jd.`id`, `job_title`, jd.`revision`, `status`, `create_date`, `id_department`, d.`name`, `reports_to`, `flsa_status`,
+                     `prepared_by`, `prepared_date`, `summary`, `essential_duties`, `qualifications`, `education_experience`, `work_environment`,
+                     `work_environment`, `summary_end`,u.`id`, u.`name` as user_name
+              FROM `bb_job_description` AS jd
+              JOIN `bb_departments` AS d ON jd.`id_department` = d.`id`
+              JOIN `bb_users` AS u ON jd.`id_user_edit` = u.`id`
+              WHERE jd.`job_title` = 'new job lalala' AND jd.`revision` = 'a'
+
+
+
+============================ 12:05:02 ============================
+
+ -> 2017-07-12 12:05:02 QUERY: 
+SELECT jd.`id`, `job_title`, jd.`revision`, `status`, `create_date`, `id_department`, d.`name`, `reports_to`, `flsa_status`,
+                     `prepared_by`, `prepared_date`, `summary`, `essential_duties`, `qualifications`, `education_experience`, `work_environment`,
+                     `work_environment`, `summary_end`,u.`id`, u.`name` as user_name
+              FROM `bb_job_description` AS jd
+              JOIN `bb_departments` AS d ON jd.`id_department` = d.`id`
+              JOIN `bb_users` AS u ON jd.`id_user_edit` = u.`id`
+              WHERE jd.`job_title` = 'new job lalala' AND jd.`revision` = '9'
+
+
+
+============================ 12:05:03 ============================
+
+ -> 2017-07-12 12:05:03 QUERY: 
+SELECT jd.`id`, `job_title`, jd.`revision`, `status`, `create_date`, `id_department`, d.`name`, `reports_to`, `flsa_status`,
+                     `prepared_by`, `prepared_date`, `summary`, `essential_duties`, `qualifications`, `education_experience`, `work_environment`,
+                     `work_environment`, `summary_end`,u.`id`, u.`name` as user_name
+              FROM `bb_job_description` AS jd
+              JOIN `bb_departments` AS d ON jd.`id_department` = d.`id`
+              JOIN `bb_users` AS u ON jd.`id_user_edit` = u.`id`
+              WHERE jd.`job_title` = 'new job lalala' AND jd.`revision` = 'b'
+
+
+
+============================ 12:42:39 ============================
+
+ -> 2017-07-12 12:42:39 QUERY: 
+SELECT `id`, `name` as user_name FROM bb_users WHERE `id` = 131
+
+
+
+============================ 12:42:47 ============================
+
+ -> 2017-07-12 12:42:47 QUERY: 
+SELECT `id`, `name` as user_name FROM bb_users WHERE `id` = 131
+
+
+
+============================ 12:42:56 ============================
+
+ -> 2017-07-12 12:42:56 QUERY: 
+SELECT `id`, `name` as user_name FROM bb_users WHERE `id` = 131
+
+
+
+============================ 12:43:14 ============================
+
+ -> 2017-07-12 12:43:14 QUERY: 
+INSERT INTO bb_positions SET position_name = 'New position test - 2017-07-12'
+
+
+
+============================ 12:43:14 ============================
+
+ -> 2017-07-12 12:43:14 QUERY: 
+INSERT INTO bb_job_description SET status = 'New', job_title = 'New position test - 2017-07-12', revision = 'A', id_department = 16, create_date = '2017-07-12', flsa_status = '1', reports_to = '61''S Coordinators', prepared_by = 131, prepared_date = '2017-07-12', summary = '1', essential_duties = NULL, qualifications = NULL, work_environment = NULL, education_experience = NULL, summary_end = NULL, id_user_edit = 131, deleted = 0
+
+
+
+============================ 12:43:20 ============================
+
+ -> 2017-07-12 12:43:20 QUERY: 
+SELECT jd.`id` as id_job_title, `job_title`, jd.`revision`, `status`, `create_date`, `id_department`, d.`name`, d.`id` as id_dep,`reports_to`, `flsa_status`, `prepared_by`, `prepared_date`, `summary`, `essential_duties`, `qualifications`,
+    	`education_experience`, `work_environment`, `work_environment`, `summary_end`, u.`name` as user_name, jd.`id_user_edit`
+              FROM `bb_job_description` AS jd
+              JOIN `bb_departments` AS d ON jd.`id_department` = d.`id`
+              JOIN `bb_users` AS u ON jd.`id_user_edit` = u.`id`
+              WHERE jd.`deleted` = 0 AND `job_title` = '' AND `status` = 'Approved'
+              GROUP BY `job_title`
+              ORDER BY `revision` DESC;
+
+
+
+============================ 12:43:30 ============================
+
+ -> 2017-07-12 12:43:30 QUERY: 
+DELETE FROM `bb_user_roles` WHERE `user_id` = 60
+
+
+
+============================ 12:43:30 ============================
+
+ -> 2017-07-12 12:43:30 QUERY: 
+INSERT INTO bb_user_roles SET user_id = '60', role_id = 8
+
+
+
+============================ 12:43:30 ============================
+
+ -> 2017-07-12 12:43:30 QUERY: 
+INSERT INTO bb_user_roles SET user_id = '60', role_id = 9
+
+
+
+============================ 12:43:33 ============================
+
+ -> 2017-07-12 12:43:33 QUERY: 
+SELECT jd.`id` as id_job_title, `job_title`, jd.`revision`, `status`, `create_date`, `id_department`, d.`name`, d.`id` as id_dep,`reports_to`, `flsa_status`, `prepared_by`, `prepared_date`, `summary`, `essential_duties`, `qualifications`,
+    	`education_experience`, `work_environment`, `work_environment`, `summary_end`, u.`name` as user_name, jd.`id_user_edit`
+              FROM `bb_job_description` AS jd
+              JOIN `bb_departments` AS d ON jd.`id_department` = d.`id`
+              JOIN `bb_users` AS u ON jd.`id_user_edit` = u.`id`
+              WHERE jd.`deleted` = 0 AND `job_title` = '' AND `status` = 'Approved'
+              GROUP BY `job_title`
+              ORDER BY `revision` DESC;
+
+
+
+============================ 12:43:35 ============================
+
+ -> 2017-07-12 12:43:35 QUERY: 
+SELECT jd.`id` as id_job_title, `job_title`, jd.`revision`, `status`, `create_date`, `id_department`, d.`name`, d.`id` as id_dep,`reports_to`, `flsa_status`, `prepared_by`, `prepared_date`, `summary`, `essential_duties`, `qualifications`,
+    	`education_experience`, `work_environment`, `work_environment`, `summary_end`, u.`name` as user_name, jd.`id_user_edit`
+              FROM `bb_job_description` AS jd
+              JOIN `bb_departments` AS d ON jd.`id_department` = d.`id`
+              JOIN `bb_users` AS u ON jd.`id_user_edit` = u.`id`
+              WHERE jd.`deleted` = 0 AND `job_title` = 'New position test - 2017-07-12' AND `status` = 'Approved'
+              GROUP BY `job_title`
+              ORDER BY `revision` DESC;
+
+
+
+============================ 12:43:40 ============================
+
+ -> 2017-07-12 12:43:40 QUERY: 
+SELECT jd.`id`, `job_title`, `job_title`, jd.`revision`, `status`, `create_date`, `id_department`, d.`name`, `reports_to`, `flsa_status`,
+                     `prepared_by`, `prepared_date`, `summary`, `essential_duties`, `qualifications`, `education_experience`, `work_environment`,
+                     `work_environment`, `summary_end`, u.`name` as user_name, jd.`id_user_edit`
+              FROM `bb_job_description` AS jd
+              JOIN `bb_users` AS u ON jd.`id_user_edit` = u.`id`
+              JOIN `bb_departments` AS d ON jd.`id_department` = d.`id`
+              WHERE jd.`id` = 40
+
+
+
+============================ 12:43:43 ============================
+
+ -> 2017-07-12 12:43:43 QUERY: 
+SELECT jd.`id`, `job_title`, `job_title`, jd.`revision`, `status`, `create_date`, `id_department`, d.`name`, `reports_to`, `flsa_status`,
+                     `prepared_by`, `prepared_date`, `summary`, `essential_duties`, `qualifications`, `education_experience`, `work_environment`,
+                     `work_environment`, `summary_end`, u.`name` as user_name, jd.`id_user_edit`
+              FROM `bb_job_description` AS jd
+              JOIN `bb_users` AS u ON jd.`id_user_edit` = u.`id`
+              JOIN `bb_departments` AS d ON jd.`id_department` = d.`id`
+              WHERE jd.`id` = 40
+
+
+
+============================ 12:43:50 ============================
+
+ -> 2017-07-12 12:43:50 QUERY: 
+SELECT jd.`id` as id_job_title, `job_title`, jd.`revision`, `status`, `create_date`, `id_department`, d.`name`, d.`id` as id_dep,`reports_to`, `flsa_status`, `prepared_by`, `prepared_date`, `summary`, `essential_duties`, `qualifications`,
+    	`education_experience`, `work_environment`, `work_environment`, `summary_end`, u.`name` as user_name, jd.`id_user_edit`
+              FROM `bb_job_description` AS jd
+              JOIN `bb_departments` AS d ON jd.`id_department` = d.`id`
+              JOIN `bb_users` AS u ON jd.`id_user_edit` = u.`id`
+              WHERE jd.`deleted` = 0 AND `job_title` = '' AND `status` = 'Approved'
+              GROUP BY `job_title`
+              ORDER BY `revision` DESC;
+
+
+
+============================ 12:43:51 ============================
+
+ -> 2017-07-12 12:43:51 QUERY: 
+SELECT jd.`id` as id_job_title, `job_title`, jd.`revision`, `status`, `create_date`, `id_department`, d.`name`, d.`id` as id_dep,`reports_to`, `flsa_status`, `prepared_by`, `prepared_date`, `summary`, `essential_duties`, `qualifications`,
+    	`education_experience`, `work_environment`, `work_environment`, `summary_end`, u.`name` as user_name, jd.`id_user_edit`
+              FROM `bb_job_description` AS jd
+              JOIN `bb_departments` AS d ON jd.`id_department` = d.`id`
+              JOIN `bb_users` AS u ON jd.`id_user_edit` = u.`id`
+              WHERE jd.`deleted` = 0 AND `job_title` = 'New position test - 2017-07-12' AND `status` = 'Approved'
+              GROUP BY `job_title`
+              ORDER BY `revision` DESC;
+
+
+
+============================ 12:43:51 ============================
+
+ -> 2017-07-12 12:43:51 QUERY: 
+SELECT jd.`id`, `job_title`, `job_title`, jd.`revision`, `status`, `create_date`, `id_department`, d.`name`, `reports_to`, `flsa_status`,
+                     `prepared_by`, `prepared_date`, `summary`, `essential_duties`, `qualifications`, `education_experience`, `work_environment`,
+                     `work_environment`, `summary_end`, u.`name` as user_name, jd.`id_user_edit`
+              FROM `bb_job_description` AS jd
+              JOIN `bb_users` AS u ON jd.`id_user_edit` = u.`id`
+              JOIN `bb_departments` AS d ON jd.`id_department` = d.`id`
+              WHERE jd.`id` = 40
+
+
+
+============================ 12:43:56 ============================
+
+ -> 2017-07-12 12:43:56 QUERY: 
+SELECT jd.`id`, `job_title`, `job_title`, jd.`revision`, `status`, `create_date`, `id_department`, d.`name`, `reports_to`, `flsa_status`,
+                     `prepared_by`, `prepared_date`, `summary`, `essential_duties`, `qualifications`, `education_experience`, `work_environment`,
+                     `work_environment`, `summary_end`, u.`name` as user_name, jd.`id_user_edit`
+              FROM `bb_job_description` AS jd
+              JOIN `bb_users` AS u ON jd.`id_user_edit` = u.`id`
+              JOIN `bb_departments` AS d ON jd.`id_department` = d.`id`
+              WHERE jd.`id` = 40
+
+
+
+============================ 12:43:59 ============================
+
+ -> 2017-07-12 12:43:59 QUERY: 
+SELECT `id`, `name` as user_name FROM bb_users WHERE `id` = 131
+
+
+
+============================ 12:43:59 ============================
+
+ -> 2017-07-12 12:43:59 QUERY: 
+SELECT `id`, `name` as user_name FROM bb_users WHERE `id` = 131
+
+
+
+============================ 12:44:08 ============================
+
+ -> 2017-07-12 12:44:08 QUERY: 
+INSERT INTO bb_job_description SET status = 'New', job_title = 'New position test - 2017-07-12', revision = 'B', id_department = 16, create_date = '2017-07-12', flsa_status = '1', reports_to = '61''S Coordinators', prepared_by = 131, prepared_date = '2017-07-12', summary = 'rev b', essential_duties = NULL, qualifications = NULL, work_environment = NULL, education_experience = NULL, summary_end = NULL, id_user_edit = 131, deleted = 0
+

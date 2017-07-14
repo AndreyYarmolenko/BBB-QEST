@@ -1,0 +1,408 @@
+==== ==== ==== ==== ==== 10:46:47 ==== ==== ==== ==== ====
+SELECT COUNT(*)
+									FROM bb_order_tasks ot
+			                        LEFT JOIN bb_users u ON assignee = u.id
+			                        LEFT JOIN bb_users us ON assigned_by = us.id
+			                        LEFT JOIN bb_task_status st ON ot.status = st.task_status_id
+			                        INNER JOIN bb_tasks_type tt ON tt.id = ot.task_type
+			                        WHERE  status =4 AND (assignee IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1) OR assigned_by IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1, 0) OR assigned_by IS NULL)  AND (u.name LIKE '%%' OR us.name LIKE '%%' OR 
+                                    ot.`order_id` LIKE '%%' OR bs.`name` LIKE '%%' OR 
+                                    tt.`tasks_type` LIKE '%%' OR DATE(ot.`requested_date`) LIKE '%%' OR DATE(ot.`assignment_date`) LIKE '%%' OR DATE(ot.`due_date`) LIKE '%%' OR DATE(ot.`completion_date`) LIKE '%%' OR DATE(ot.`new_due_date`) LIKE '%%')
+
+==== ==== ==== ==== ==== 10:46:47 ==== ==== ==== ==== ====
+SELECT ot.task_id AS id, bs.`name` AS bbb_sku, bs.`id` AS bbb_sku_id, ot.order_id AS request_id, tt.id AS id_task_type, tt.tasks_type, u.name AS assignee, u.id AS assignee_id, us.name AS assigned_by, us.id AS assigned_by_id, DATE(requested_date) AS requested_date, DATE(assignment_date) AS assignment_date, DATE(due_date) AS due_date, DATE(completion_date) AS completion_date, DATE(new_due_date) AS new_due_date, st.name AS STATUS
+									FROM bb_order_tasks ot
+			                        LEFT JOIN bb_users u ON assignee = u.id
+			                        LEFT JOIN bb_users us ON assigned_by = us.id
+			                        LEFT JOIN bb_task_status st ON ot.status = st.task_status_id
+			                        LEFT JOIN bb_tasks_sku ts ON ts.`RequestID` = ot.`order_id`
+			                        LEFT JOIN bb_bbb_sku bs ON bs.`id` = ts.`bbb_sku_id`			                        
+			                        INNER JOIN bb_tasks_type tt ON tt.id = ot.task_type
+			                        WHERE   status =4 AND (assignee IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1) OR assigned_by IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1, 0) OR assigned_by IS NULL)  AND (u.name LIKE '%%' OR us.name LIKE '%%' OR 
+                                    ot.`order_id` LIKE '%%' OR bs.`name` LIKE '%%' OR 
+                                    tt.`tasks_type` LIKE '%%' OR DATE(ot.`requested_date`) LIKE '%%' OR DATE(ot.`assignment_date`) LIKE '%%' OR DATE(ot.`due_date`) LIKE '%%' OR DATE(ot.`completion_date`) LIKE '%%' OR DATE(ot.`new_due_date`) LIKE '%%')
+
+==== ==== ==== ==== ==== 10:46:53 ==== ==== ==== ==== ====
+SELECT COUNT(*)
+									FROM bb_order_tasks ot
+			                        LEFT JOIN bb_users u ON assignee = u.id
+			                        LEFT JOIN bb_users us ON assigned_by = us.id
+			                        LEFT JOIN bb_task_status st ON ot.status = st.task_status_id
+			                        INNER JOIN bb_tasks_type tt ON tt.id = ot.task_type
+			                        WHERE  status =4 AND (assignee IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1) OR assigned_by IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1, 0) OR assigned_by IS NULL)  AND (u.name LIKE '%p%' OR us.name LIKE '%p%' OR 
+                                    ot.`order_id` LIKE '%p%' OR bs.`name` LIKE '%p%' OR 
+                                    tt.`tasks_type` LIKE '%p%' OR DATE(ot.`requested_date`) LIKE '%p%' OR DATE(ot.`assignment_date`) LIKE '%p%' OR DATE(ot.`due_date`) LIKE '%p%' OR DATE(ot.`completion_date`) LIKE '%p%' OR DATE(ot.`new_due_date`) LIKE '%p%')
+
+==== ==== ==== ==== ==== 10:46:53 ==== ==== ==== ==== ====
+SELECT ot.task_id AS id, bs.`name` AS bbb_sku, bs.`id` AS bbb_sku_id, ot.order_id AS request_id, tt.id AS id_task_type, tt.tasks_type, u.name AS assignee, u.id AS assignee_id, us.name AS assigned_by, us.id AS assigned_by_id, DATE(requested_date) AS requested_date, DATE(assignment_date) AS assignment_date, DATE(due_date) AS due_date, DATE(completion_date) AS completion_date, DATE(new_due_date) AS new_due_date, st.name AS STATUS
+									FROM bb_order_tasks ot
+			                        LEFT JOIN bb_users u ON assignee = u.id
+			                        LEFT JOIN bb_users us ON assigned_by = us.id
+			                        LEFT JOIN bb_task_status st ON ot.status = st.task_status_id
+			                        LEFT JOIN bb_tasks_sku ts ON ts.`RequestID` = ot.`order_id`
+			                        LEFT JOIN bb_bbb_sku bs ON bs.`id` = ts.`bbb_sku_id`			                        
+			                        INNER JOIN bb_tasks_type tt ON tt.id = ot.task_type
+			                        WHERE   status =4 AND (assignee IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1) OR assigned_by IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1, 0) OR assigned_by IS NULL)  AND (u.name LIKE '%p%' OR us.name LIKE '%p%' OR 
+                                    ot.`order_id` LIKE '%p%' OR bs.`name` LIKE '%p%' OR 
+                                    tt.`tasks_type` LIKE '%p%' OR DATE(ot.`requested_date`) LIKE '%p%' OR DATE(ot.`assignment_date`) LIKE '%p%' OR DATE(ot.`due_date`) LIKE '%p%' OR DATE(ot.`completion_date`) LIKE '%p%' OR DATE(ot.`new_due_date`) LIKE '%p%')
+
+==== ==== ==== ==== ==== 10:46:53 ==== ==== ==== ==== ====
+SELECT COUNT(*)
+									FROM bb_order_tasks ot
+			                        LEFT JOIN bb_users u ON assignee = u.id
+			                        LEFT JOIN bb_users us ON assigned_by = us.id
+			                        LEFT JOIN bb_task_status st ON ot.status = st.task_status_id
+			                        INNER JOIN bb_tasks_type tt ON tt.id = ot.task_type
+			                        WHERE  status =4 AND (assignee IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1) OR assigned_by IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1, 0) OR assigned_by IS NULL)  AND (u.name LIKE '%p%' OR us.name LIKE '%p%' OR 
+                                    ot.`order_id` LIKE '%p%' OR bs.`name` LIKE '%p%' OR 
+                                    tt.`tasks_type` LIKE '%p%' OR DATE(ot.`requested_date`) LIKE '%p%' OR DATE(ot.`assignment_date`) LIKE '%p%' OR DATE(ot.`due_date`) LIKE '%p%' OR DATE(ot.`completion_date`) LIKE '%p%' OR DATE(ot.`new_due_date`) LIKE '%p%')
+
+==== ==== ==== ==== ==== 10:46:53 ==== ==== ==== ==== ====
+SELECT ot.task_id AS id, bs.`name` AS bbb_sku, bs.`id` AS bbb_sku_id, ot.order_id AS request_id, tt.id AS id_task_type, tt.tasks_type, u.name AS assignee, u.id AS assignee_id, us.name AS assigned_by, us.id AS assigned_by_id, DATE(requested_date) AS requested_date, DATE(assignment_date) AS assignment_date, DATE(due_date) AS due_date, DATE(completion_date) AS completion_date, DATE(new_due_date) AS new_due_date, st.name AS STATUS
+									FROM bb_order_tasks ot
+			                        LEFT JOIN bb_users u ON assignee = u.id
+			                        LEFT JOIN bb_users us ON assigned_by = us.id
+			                        LEFT JOIN bb_task_status st ON ot.status = st.task_status_id
+			                        LEFT JOIN bb_tasks_sku ts ON ts.`RequestID` = ot.`order_id`
+			                        LEFT JOIN bb_bbb_sku bs ON bs.`id` = ts.`bbb_sku_id`			                        
+			                        INNER JOIN bb_tasks_type tt ON tt.id = ot.task_type
+			                        WHERE   status =4 AND (assignee IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1) OR assigned_by IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1, 0) OR assigned_by IS NULL)  AND (u.name LIKE '%p%' OR us.name LIKE '%p%' OR 
+                                    ot.`order_id` LIKE '%p%' OR bs.`name` LIKE '%p%' OR 
+                                    tt.`tasks_type` LIKE '%p%' OR DATE(ot.`requested_date`) LIKE '%p%' OR DATE(ot.`assignment_date`) LIKE '%p%' OR DATE(ot.`due_date`) LIKE '%p%' OR DATE(ot.`completion_date`) LIKE '%p%' OR DATE(ot.`new_due_date`) LIKE '%p%')
+
+==== ==== ==== ==== ==== 10:46:54 ==== ==== ==== ==== ====
+SELECT COUNT(*)
+									FROM bb_order_tasks ot
+			                        LEFT JOIN bb_users u ON assignee = u.id
+			                        LEFT JOIN bb_users us ON assigned_by = us.id
+			                        LEFT JOIN bb_task_status st ON ot.status = st.task_status_id
+			                        INNER JOIN bb_tasks_type tt ON tt.id = ot.task_type
+			                        WHERE  status =4 AND (assignee IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1) OR assigned_by IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1, 0) OR assigned_by IS NULL)  AND (u.name LIKE '%pa%' OR us.name LIKE '%pa%' OR 
+                                    ot.`order_id` LIKE '%pa%' OR bs.`name` LIKE '%pa%' OR 
+                                    tt.`tasks_type` LIKE '%pa%' OR DATE(ot.`requested_date`) LIKE '%pa%' OR DATE(ot.`assignment_date`) LIKE '%pa%' OR DATE(ot.`due_date`) LIKE '%pa%' OR DATE(ot.`completion_date`) LIKE '%pa%' OR DATE(ot.`new_due_date`) LIKE '%pa%')
+
+==== ==== ==== ==== ==== 10:46:54 ==== ==== ==== ==== ====
+SELECT ot.task_id AS id, bs.`name` AS bbb_sku, bs.`id` AS bbb_sku_id, ot.order_id AS request_id, tt.id AS id_task_type, tt.tasks_type, u.name AS assignee, u.id AS assignee_id, us.name AS assigned_by, us.id AS assigned_by_id, DATE(requested_date) AS requested_date, DATE(assignment_date) AS assignment_date, DATE(due_date) AS due_date, DATE(completion_date) AS completion_date, DATE(new_due_date) AS new_due_date, st.name AS STATUS
+									FROM bb_order_tasks ot
+			                        LEFT JOIN bb_users u ON assignee = u.id
+			                        LEFT JOIN bb_users us ON assigned_by = us.id
+			                        LEFT JOIN bb_task_status st ON ot.status = st.task_status_id
+			                        LEFT JOIN bb_tasks_sku ts ON ts.`RequestID` = ot.`order_id`
+			                        LEFT JOIN bb_bbb_sku bs ON bs.`id` = ts.`bbb_sku_id`			                        
+			                        INNER JOIN bb_tasks_type tt ON tt.id = ot.task_type
+			                        WHERE   status =4 AND (assignee IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1) OR assigned_by IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1, 0) OR assigned_by IS NULL)  AND (u.name LIKE '%pa%' OR us.name LIKE '%pa%' OR 
+                                    ot.`order_id` LIKE '%pa%' OR bs.`name` LIKE '%pa%' OR 
+                                    tt.`tasks_type` LIKE '%pa%' OR DATE(ot.`requested_date`) LIKE '%pa%' OR DATE(ot.`assignment_date`) LIKE '%pa%' OR DATE(ot.`due_date`) LIKE '%pa%' OR DATE(ot.`completion_date`) LIKE '%pa%' OR DATE(ot.`new_due_date`) LIKE '%pa%')
+
+==== ==== ==== ==== ==== 10:46:54 ==== ==== ==== ==== ====
+SELECT COUNT(*)
+									FROM bb_order_tasks ot
+			                        LEFT JOIN bb_users u ON assignee = u.id
+			                        LEFT JOIN bb_users us ON assigned_by = us.id
+			                        LEFT JOIN bb_task_status st ON ot.status = st.task_status_id
+			                        INNER JOIN bb_tasks_type tt ON tt.id = ot.task_type
+			                        WHERE  status =4 AND (assignee IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1) OR assigned_by IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1, 0) OR assigned_by IS NULL)  AND (u.name LIKE '%pa%' OR us.name LIKE '%pa%' OR 
+                                    ot.`order_id` LIKE '%pa%' OR bs.`name` LIKE '%pa%' OR 
+                                    tt.`tasks_type` LIKE '%pa%' OR DATE(ot.`requested_date`) LIKE '%pa%' OR DATE(ot.`assignment_date`) LIKE '%pa%' OR DATE(ot.`due_date`) LIKE '%pa%' OR DATE(ot.`completion_date`) LIKE '%pa%' OR DATE(ot.`new_due_date`) LIKE '%pa%')
+
+==== ==== ==== ==== ==== 10:46:54 ==== ==== ==== ==== ====
+SELECT ot.task_id AS id, bs.`name` AS bbb_sku, bs.`id` AS bbb_sku_id, ot.order_id AS request_id, tt.id AS id_task_type, tt.tasks_type, u.name AS assignee, u.id AS assignee_id, us.name AS assigned_by, us.id AS assigned_by_id, DATE(requested_date) AS requested_date, DATE(assignment_date) AS assignment_date, DATE(due_date) AS due_date, DATE(completion_date) AS completion_date, DATE(new_due_date) AS new_due_date, st.name AS STATUS
+									FROM bb_order_tasks ot
+			                        LEFT JOIN bb_users u ON assignee = u.id
+			                        LEFT JOIN bb_users us ON assigned_by = us.id
+			                        LEFT JOIN bb_task_status st ON ot.status = st.task_status_id
+			                        LEFT JOIN bb_tasks_sku ts ON ts.`RequestID` = ot.`order_id`
+			                        LEFT JOIN bb_bbb_sku bs ON bs.`id` = ts.`bbb_sku_id`			                        
+			                        INNER JOIN bb_tasks_type tt ON tt.id = ot.task_type
+			                        WHERE   status =4 AND (assignee IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1) OR assigned_by IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1, 0) OR assigned_by IS NULL)  AND (u.name LIKE '%pa%' OR us.name LIKE '%pa%' OR 
+                                    ot.`order_id` LIKE '%pa%' OR bs.`name` LIKE '%pa%' OR 
+                                    tt.`tasks_type` LIKE '%pa%' OR DATE(ot.`requested_date`) LIKE '%pa%' OR DATE(ot.`assignment_date`) LIKE '%pa%' OR DATE(ot.`due_date`) LIKE '%pa%' OR DATE(ot.`completion_date`) LIKE '%pa%' OR DATE(ot.`new_due_date`) LIKE '%pa%')
+
+==== ==== ==== ==== ==== 10:46:55 ==== ==== ==== ==== ====
+SELECT COUNT(*)
+									FROM bb_order_tasks ot
+			                        LEFT JOIN bb_users u ON assignee = u.id
+			                        LEFT JOIN bb_users us ON assigned_by = us.id
+			                        LEFT JOIN bb_task_status st ON ot.status = st.task_status_id
+			                        INNER JOIN bb_tasks_type tt ON tt.id = ot.task_type
+			                        WHERE  status =4 AND (assignee IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1) OR assigned_by IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1, 0) OR assigned_by IS NULL)  AND (u.name LIKE '%pap%' OR us.name LIKE '%pap%' OR 
+                                    ot.`order_id` LIKE '%pap%' OR bs.`name` LIKE '%pap%' OR 
+                                    tt.`tasks_type` LIKE '%pap%' OR DATE(ot.`requested_date`) LIKE '%pap%' OR DATE(ot.`assignment_date`) LIKE '%pap%' OR DATE(ot.`due_date`) LIKE '%pap%' OR DATE(ot.`completion_date`) LIKE '%pap%' OR DATE(ot.`new_due_date`) LIKE '%pap%')
+
+==== ==== ==== ==== ==== 10:46:55 ==== ==== ==== ==== ====
+SELECT ot.task_id AS id, bs.`name` AS bbb_sku, bs.`id` AS bbb_sku_id, ot.order_id AS request_id, tt.id AS id_task_type, tt.tasks_type, u.name AS assignee, u.id AS assignee_id, us.name AS assigned_by, us.id AS assigned_by_id, DATE(requested_date) AS requested_date, DATE(assignment_date) AS assignment_date, DATE(due_date) AS due_date, DATE(completion_date) AS completion_date, DATE(new_due_date) AS new_due_date, st.name AS STATUS
+									FROM bb_order_tasks ot
+			                        LEFT JOIN bb_users u ON assignee = u.id
+			                        LEFT JOIN bb_users us ON assigned_by = us.id
+			                        LEFT JOIN bb_task_status st ON ot.status = st.task_status_id
+			                        LEFT JOIN bb_tasks_sku ts ON ts.`RequestID` = ot.`order_id`
+			                        LEFT JOIN bb_bbb_sku bs ON bs.`id` = ts.`bbb_sku_id`			                        
+			                        INNER JOIN bb_tasks_type tt ON tt.id = ot.task_type
+			                        WHERE   status =4 AND (assignee IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1) OR assigned_by IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1, 0) OR assigned_by IS NULL)  AND (u.name LIKE '%pap%' OR us.name LIKE '%pap%' OR 
+                                    ot.`order_id` LIKE '%pap%' OR bs.`name` LIKE '%pap%' OR 
+                                    tt.`tasks_type` LIKE '%pap%' OR DATE(ot.`requested_date`) LIKE '%pap%' OR DATE(ot.`assignment_date`) LIKE '%pap%' OR DATE(ot.`due_date`) LIKE '%pap%' OR DATE(ot.`completion_date`) LIKE '%pap%' OR DATE(ot.`new_due_date`) LIKE '%pap%')
+
+==== ==== ==== ==== ==== 10:46:56 ==== ==== ==== ==== ====
+SELECT COUNT(*)
+									FROM bb_order_tasks ot
+			                        LEFT JOIN bb_users u ON assignee = u.id
+			                        LEFT JOIN bb_users us ON assigned_by = us.id
+			                        LEFT JOIN bb_task_status st ON ot.status = st.task_status_id
+			                        INNER JOIN bb_tasks_type tt ON tt.id = ot.task_type
+			                        WHERE  status =4 AND (assignee IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1) OR assigned_by IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1, 0) OR assigned_by IS NULL)  AND (u.name LIKE '%pap%' OR us.name LIKE '%pap%' OR 
+                                    ot.`order_id` LIKE '%pap%' OR bs.`name` LIKE '%pap%' OR 
+                                    tt.`tasks_type` LIKE '%pap%' OR DATE(ot.`requested_date`) LIKE '%pap%' OR DATE(ot.`assignment_date`) LIKE '%pap%' OR DATE(ot.`due_date`) LIKE '%pap%' OR DATE(ot.`completion_date`) LIKE '%pap%' OR DATE(ot.`new_due_date`) LIKE '%pap%')
+
+==== ==== ==== ==== ==== 10:46:56 ==== ==== ==== ==== ====
+SELECT ot.task_id AS id, bs.`name` AS bbb_sku, bs.`id` AS bbb_sku_id, ot.order_id AS request_id, tt.id AS id_task_type, tt.tasks_type, u.name AS assignee, u.id AS assignee_id, us.name AS assigned_by, us.id AS assigned_by_id, DATE(requested_date) AS requested_date, DATE(assignment_date) AS assignment_date, DATE(due_date) AS due_date, DATE(completion_date) AS completion_date, DATE(new_due_date) AS new_due_date, st.name AS STATUS
+									FROM bb_order_tasks ot
+			                        LEFT JOIN bb_users u ON assignee = u.id
+			                        LEFT JOIN bb_users us ON assigned_by = us.id
+			                        LEFT JOIN bb_task_status st ON ot.status = st.task_status_id
+			                        LEFT JOIN bb_tasks_sku ts ON ts.`RequestID` = ot.`order_id`
+			                        LEFT JOIN bb_bbb_sku bs ON bs.`id` = ts.`bbb_sku_id`			                        
+			                        INNER JOIN bb_tasks_type tt ON tt.id = ot.task_type
+			                        WHERE   status =4 AND (assignee IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1) OR assigned_by IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1, 0) OR assigned_by IS NULL)  AND (u.name LIKE '%pap%' OR us.name LIKE '%pap%' OR 
+                                    ot.`order_id` LIKE '%pap%' OR bs.`name` LIKE '%pap%' OR 
+                                    tt.`tasks_type` LIKE '%pap%' OR DATE(ot.`requested_date`) LIKE '%pap%' OR DATE(ot.`assignment_date`) LIKE '%pap%' OR DATE(ot.`due_date`) LIKE '%pap%' OR DATE(ot.`completion_date`) LIKE '%pap%' OR DATE(ot.`new_due_date`) LIKE '%pap%')
+
+==== ==== ==== ==== ==== 10:46:56 ==== ==== ==== ==== ====
+SELECT COUNT(*)
+									FROM bb_order_tasks ot
+			                        LEFT JOIN bb_users u ON assignee = u.id
+			                        LEFT JOIN bb_users us ON assigned_by = us.id
+			                        LEFT JOIN bb_task_status st ON ot.status = st.task_status_id
+			                        INNER JOIN bb_tasks_type tt ON tt.id = ot.task_type
+			                        WHERE  status =4 AND (assignee IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1) OR assigned_by IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1, 0) OR assigned_by IS NULL)  AND (u.name LIKE '%pa%' OR us.name LIKE '%pa%' OR 
+                                    ot.`order_id` LIKE '%pa%' OR bs.`name` LIKE '%pa%' OR 
+                                    tt.`tasks_type` LIKE '%pa%' OR DATE(ot.`requested_date`) LIKE '%pa%' OR DATE(ot.`assignment_date`) LIKE '%pa%' OR DATE(ot.`due_date`) LIKE '%pa%' OR DATE(ot.`completion_date`) LIKE '%pa%' OR DATE(ot.`new_due_date`) LIKE '%pa%')
+
+==== ==== ==== ==== ==== 10:46:56 ==== ==== ==== ==== ====
+SELECT ot.task_id AS id, bs.`name` AS bbb_sku, bs.`id` AS bbb_sku_id, ot.order_id AS request_id, tt.id AS id_task_type, tt.tasks_type, u.name AS assignee, u.id AS assignee_id, us.name AS assigned_by, us.id AS assigned_by_id, DATE(requested_date) AS requested_date, DATE(assignment_date) AS assignment_date, DATE(due_date) AS due_date, DATE(completion_date) AS completion_date, DATE(new_due_date) AS new_due_date, st.name AS STATUS
+									FROM bb_order_tasks ot
+			                        LEFT JOIN bb_users u ON assignee = u.id
+			                        LEFT JOIN bb_users us ON assigned_by = us.id
+			                        LEFT JOIN bb_task_status st ON ot.status = st.task_status_id
+			                        LEFT JOIN bb_tasks_sku ts ON ts.`RequestID` = ot.`order_id`
+			                        LEFT JOIN bb_bbb_sku bs ON bs.`id` = ts.`bbb_sku_id`			                        
+			                        INNER JOIN bb_tasks_type tt ON tt.id = ot.task_type
+			                        WHERE   status =4 AND (assignee IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1) OR assigned_by IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1, 0) OR assigned_by IS NULL)  AND (u.name LIKE '%pa%' OR us.name LIKE '%pa%' OR 
+                                    ot.`order_id` LIKE '%pa%' OR bs.`name` LIKE '%pa%' OR 
+                                    tt.`tasks_type` LIKE '%pa%' OR DATE(ot.`requested_date`) LIKE '%pa%' OR DATE(ot.`assignment_date`) LIKE '%pa%' OR DATE(ot.`due_date`) LIKE '%pa%' OR DATE(ot.`completion_date`) LIKE '%pa%' OR DATE(ot.`new_due_date`) LIKE '%pa%')
+
+==== ==== ==== ==== ==== 10:46:57 ==== ==== ==== ==== ====
+SELECT COUNT(*)
+									FROM bb_order_tasks ot
+			                        LEFT JOIN bb_users u ON assignee = u.id
+			                        LEFT JOIN bb_users us ON assigned_by = us.id
+			                        LEFT JOIN bb_task_status st ON ot.status = st.task_status_id
+			                        INNER JOIN bb_tasks_type tt ON tt.id = ot.task_type
+			                        WHERE  status =4 AND (assignee IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1) OR assigned_by IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1, 0) OR assigned_by IS NULL)  AND (u.name LIKE '%pa%' OR us.name LIKE '%pa%' OR 
+                                    ot.`order_id` LIKE '%pa%' OR bs.`name` LIKE '%pa%' OR 
+                                    tt.`tasks_type` LIKE '%pa%' OR DATE(ot.`requested_date`) LIKE '%pa%' OR DATE(ot.`assignment_date`) LIKE '%pa%' OR DATE(ot.`due_date`) LIKE '%pa%' OR DATE(ot.`completion_date`) LIKE '%pa%' OR DATE(ot.`new_due_date`) LIKE '%pa%')
+
+==== ==== ==== ==== ==== 10:46:57 ==== ==== ==== ==== ====
+SELECT ot.task_id AS id, bs.`name` AS bbb_sku, bs.`id` AS bbb_sku_id, ot.order_id AS request_id, tt.id AS id_task_type, tt.tasks_type, u.name AS assignee, u.id AS assignee_id, us.name AS assigned_by, us.id AS assigned_by_id, DATE(requested_date) AS requested_date, DATE(assignment_date) AS assignment_date, DATE(due_date) AS due_date, DATE(completion_date) AS completion_date, DATE(new_due_date) AS new_due_date, st.name AS STATUS
+									FROM bb_order_tasks ot
+			                        LEFT JOIN bb_users u ON assignee = u.id
+			                        LEFT JOIN bb_users us ON assigned_by = us.id
+			                        LEFT JOIN bb_task_status st ON ot.status = st.task_status_id
+			                        LEFT JOIN bb_tasks_sku ts ON ts.`RequestID` = ot.`order_id`
+			                        LEFT JOIN bb_bbb_sku bs ON bs.`id` = ts.`bbb_sku_id`			                        
+			                        INNER JOIN bb_tasks_type tt ON tt.id = ot.task_type
+			                        WHERE   status =4 AND (assignee IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1) OR assigned_by IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1, 0) OR assigned_by IS NULL)  AND (u.name LIKE '%pa%' OR us.name LIKE '%pa%' OR 
+                                    ot.`order_id` LIKE '%pa%' OR bs.`name` LIKE '%pa%' OR 
+                                    tt.`tasks_type` LIKE '%pa%' OR DATE(ot.`requested_date`) LIKE '%pa%' OR DATE(ot.`assignment_date`) LIKE '%pa%' OR DATE(ot.`due_date`) LIKE '%pa%' OR DATE(ot.`completion_date`) LIKE '%pa%' OR DATE(ot.`new_due_date`) LIKE '%pa%')
+
+==== ==== ==== ==== ==== 10:46:57 ==== ==== ==== ==== ====
+SELECT COUNT(*)
+									FROM bb_order_tasks ot
+			                        LEFT JOIN bb_users u ON assignee = u.id
+			                        LEFT JOIN bb_users us ON assigned_by = us.id
+			                        LEFT JOIN bb_task_status st ON ot.status = st.task_status_id
+			                        INNER JOIN bb_tasks_type tt ON tt.id = ot.task_type
+			                        WHERE  status =4 AND (assignee IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1) OR assigned_by IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1, 0) OR assigned_by IS NULL)  AND (u.name LIKE '%p%' OR us.name LIKE '%p%' OR 
+                                    ot.`order_id` LIKE '%p%' OR bs.`name` LIKE '%p%' OR 
+                                    tt.`tasks_type` LIKE '%p%' OR DATE(ot.`requested_date`) LIKE '%p%' OR DATE(ot.`assignment_date`) LIKE '%p%' OR DATE(ot.`due_date`) LIKE '%p%' OR DATE(ot.`completion_date`) LIKE '%p%' OR DATE(ot.`new_due_date`) LIKE '%p%')
+
+==== ==== ==== ==== ==== 10:46:57 ==== ==== ==== ==== ====
+SELECT ot.task_id AS id, bs.`name` AS bbb_sku, bs.`id` AS bbb_sku_id, ot.order_id AS request_id, tt.id AS id_task_type, tt.tasks_type, u.name AS assignee, u.id AS assignee_id, us.name AS assigned_by, us.id AS assigned_by_id, DATE(requested_date) AS requested_date, DATE(assignment_date) AS assignment_date, DATE(due_date) AS due_date, DATE(completion_date) AS completion_date, DATE(new_due_date) AS new_due_date, st.name AS STATUS
+									FROM bb_order_tasks ot
+			                        LEFT JOIN bb_users u ON assignee = u.id
+			                        LEFT JOIN bb_users us ON assigned_by = us.id
+			                        LEFT JOIN bb_task_status st ON ot.status = st.task_status_id
+			                        LEFT JOIN bb_tasks_sku ts ON ts.`RequestID` = ot.`order_id`
+			                        LEFT JOIN bb_bbb_sku bs ON bs.`id` = ts.`bbb_sku_id`			                        
+			                        INNER JOIN bb_tasks_type tt ON tt.id = ot.task_type
+			                        WHERE   status =4 AND (assignee IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1) OR assigned_by IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1, 0) OR assigned_by IS NULL)  AND (u.name LIKE '%p%' OR us.name LIKE '%p%' OR 
+                                    ot.`order_id` LIKE '%p%' OR bs.`name` LIKE '%p%' OR 
+                                    tt.`tasks_type` LIKE '%p%' OR DATE(ot.`requested_date`) LIKE '%p%' OR DATE(ot.`assignment_date`) LIKE '%p%' OR DATE(ot.`due_date`) LIKE '%p%' OR DATE(ot.`completion_date`) LIKE '%p%' OR DATE(ot.`new_due_date`) LIKE '%p%')
+
+==== ==== ==== ==== ==== 10:46:58 ==== ==== ==== ==== ====
+SELECT COUNT(*)
+									FROM bb_order_tasks ot
+			                        LEFT JOIN bb_users u ON assignee = u.id
+			                        LEFT JOIN bb_users us ON assigned_by = us.id
+			                        LEFT JOIN bb_task_status st ON ot.status = st.task_status_id
+			                        INNER JOIN bb_tasks_type tt ON tt.id = ot.task_type
+			                        WHERE  status =4 AND (assignee IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1) OR assigned_by IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1, 0) OR assigned_by IS NULL)  AND (u.name LIKE '%p%' OR us.name LIKE '%p%' OR 
+                                    ot.`order_id` LIKE '%p%' OR bs.`name` LIKE '%p%' OR 
+                                    tt.`tasks_type` LIKE '%p%' OR DATE(ot.`requested_date`) LIKE '%p%' OR DATE(ot.`assignment_date`) LIKE '%p%' OR DATE(ot.`due_date`) LIKE '%p%' OR DATE(ot.`completion_date`) LIKE '%p%' OR DATE(ot.`new_due_date`) LIKE '%p%')
+
+==== ==== ==== ==== ==== 10:46:58 ==== ==== ==== ==== ====
+SELECT ot.task_id AS id, bs.`name` AS bbb_sku, bs.`id` AS bbb_sku_id, ot.order_id AS request_id, tt.id AS id_task_type, tt.tasks_type, u.name AS assignee, u.id AS assignee_id, us.name AS assigned_by, us.id AS assigned_by_id, DATE(requested_date) AS requested_date, DATE(assignment_date) AS assignment_date, DATE(due_date) AS due_date, DATE(completion_date) AS completion_date, DATE(new_due_date) AS new_due_date, st.name AS STATUS
+									FROM bb_order_tasks ot
+			                        LEFT JOIN bb_users u ON assignee = u.id
+			                        LEFT JOIN bb_users us ON assigned_by = us.id
+			                        LEFT JOIN bb_task_status st ON ot.status = st.task_status_id
+			                        LEFT JOIN bb_tasks_sku ts ON ts.`RequestID` = ot.`order_id`
+			                        LEFT JOIN bb_bbb_sku bs ON bs.`id` = ts.`bbb_sku_id`			                        
+			                        INNER JOIN bb_tasks_type tt ON tt.id = ot.task_type
+			                        WHERE   status =4 AND (assignee IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1) OR assigned_by IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1, 0) OR assigned_by IS NULL)  AND (u.name LIKE '%p%' OR us.name LIKE '%p%' OR 
+                                    ot.`order_id` LIKE '%p%' OR bs.`name` LIKE '%p%' OR 
+                                    tt.`tasks_type` LIKE '%p%' OR DATE(ot.`requested_date`) LIKE '%p%' OR DATE(ot.`assignment_date`) LIKE '%p%' OR DATE(ot.`due_date`) LIKE '%p%' OR DATE(ot.`completion_date`) LIKE '%p%' OR DATE(ot.`new_due_date`) LIKE '%p%')
+
+==== ==== ==== ==== ==== 10:46:58 ==== ==== ==== ==== ====
+SELECT COUNT(*)
+									FROM bb_order_tasks ot
+			                        LEFT JOIN bb_users u ON assignee = u.id
+			                        LEFT JOIN bb_users us ON assigned_by = us.id
+			                        LEFT JOIN bb_task_status st ON ot.status = st.task_status_id
+			                        INNER JOIN bb_tasks_type tt ON tt.id = ot.task_type
+			                        WHERE  status =4 AND (assignee IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1) OR assigned_by IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1, 0) OR assigned_by IS NULL)  AND (u.name LIKE '%pp%' OR us.name LIKE '%pp%' OR 
+                                    ot.`order_id` LIKE '%pp%' OR bs.`name` LIKE '%pp%' OR 
+                                    tt.`tasks_type` LIKE '%pp%' OR DATE(ot.`requested_date`) LIKE '%pp%' OR DATE(ot.`assignment_date`) LIKE '%pp%' OR DATE(ot.`due_date`) LIKE '%pp%' OR DATE(ot.`completion_date`) LIKE '%pp%' OR DATE(ot.`new_due_date`) LIKE '%pp%')
+
+==== ==== ==== ==== ==== 10:46:58 ==== ==== ==== ==== ====
+SELECT ot.task_id AS id, bs.`name` AS bbb_sku, bs.`id` AS bbb_sku_id, ot.order_id AS request_id, tt.id AS id_task_type, tt.tasks_type, u.name AS assignee, u.id AS assignee_id, us.name AS assigned_by, us.id AS assigned_by_id, DATE(requested_date) AS requested_date, DATE(assignment_date) AS assignment_date, DATE(due_date) AS due_date, DATE(completion_date) AS completion_date, DATE(new_due_date) AS new_due_date, st.name AS STATUS
+									FROM bb_order_tasks ot
+			                        LEFT JOIN bb_users u ON assignee = u.id
+			                        LEFT JOIN bb_users us ON assigned_by = us.id
+			                        LEFT JOIN bb_task_status st ON ot.status = st.task_status_id
+			                        LEFT JOIN bb_tasks_sku ts ON ts.`RequestID` = ot.`order_id`
+			                        LEFT JOIN bb_bbb_sku bs ON bs.`id` = ts.`bbb_sku_id`			                        
+			                        INNER JOIN bb_tasks_type tt ON tt.id = ot.task_type
+			                        WHERE   status =4 AND (assignee IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1) OR assigned_by IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1, 0) OR assigned_by IS NULL)  AND (u.name LIKE '%pp%' OR us.name LIKE '%pp%' OR 
+                                    ot.`order_id` LIKE '%pp%' OR bs.`name` LIKE '%pp%' OR 
+                                    tt.`tasks_type` LIKE '%pp%' OR DATE(ot.`requested_date`) LIKE '%pp%' OR DATE(ot.`assignment_date`) LIKE '%pp%' OR DATE(ot.`due_date`) LIKE '%pp%' OR DATE(ot.`completion_date`) LIKE '%pp%' OR DATE(ot.`new_due_date`) LIKE '%pp%')
+
+==== ==== ==== ==== ==== 10:46:59 ==== ==== ==== ==== ====
+SELECT COUNT(*)
+									FROM bb_order_tasks ot
+			                        LEFT JOIN bb_users u ON assignee = u.id
+			                        LEFT JOIN bb_users us ON assigned_by = us.id
+			                        LEFT JOIN bb_task_status st ON ot.status = st.task_status_id
+			                        INNER JOIN bb_tasks_type tt ON tt.id = ot.task_type
+			                        WHERE  status =4 AND (assignee IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1) OR assigned_by IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1, 0) OR assigned_by IS NULL)  AND (u.name LIKE '%pp%' OR us.name LIKE '%pp%' OR 
+                                    ot.`order_id` LIKE '%pp%' OR bs.`name` LIKE '%pp%' OR 
+                                    tt.`tasks_type` LIKE '%pp%' OR DATE(ot.`requested_date`) LIKE '%pp%' OR DATE(ot.`assignment_date`) LIKE '%pp%' OR DATE(ot.`due_date`) LIKE '%pp%' OR DATE(ot.`completion_date`) LIKE '%pp%' OR DATE(ot.`new_due_date`) LIKE '%pp%')
+
+==== ==== ==== ==== ==== 10:46:59 ==== ==== ==== ==== ====
+SELECT ot.task_id AS id, bs.`name` AS bbb_sku, bs.`id` AS bbb_sku_id, ot.order_id AS request_id, tt.id AS id_task_type, tt.tasks_type, u.name AS assignee, u.id AS assignee_id, us.name AS assigned_by, us.id AS assigned_by_id, DATE(requested_date) AS requested_date, DATE(assignment_date) AS assignment_date, DATE(due_date) AS due_date, DATE(completion_date) AS completion_date, DATE(new_due_date) AS new_due_date, st.name AS STATUS
+									FROM bb_order_tasks ot
+			                        LEFT JOIN bb_users u ON assignee = u.id
+			                        LEFT JOIN bb_users us ON assigned_by = us.id
+			                        LEFT JOIN bb_task_status st ON ot.status = st.task_status_id
+			                        LEFT JOIN bb_tasks_sku ts ON ts.`RequestID` = ot.`order_id`
+			                        LEFT JOIN bb_bbb_sku bs ON bs.`id` = ts.`bbb_sku_id`			                        
+			                        INNER JOIN bb_tasks_type tt ON tt.id = ot.task_type
+			                        WHERE   status =4 AND (assignee IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1) OR assigned_by IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1, 0) OR assigned_by IS NULL)  AND (u.name LIKE '%pp%' OR us.name LIKE '%pp%' OR 
+                                    ot.`order_id` LIKE '%pp%' OR bs.`name` LIKE '%pp%' OR 
+                                    tt.`tasks_type` LIKE '%pp%' OR DATE(ot.`requested_date`) LIKE '%pp%' OR DATE(ot.`assignment_date`) LIKE '%pp%' OR DATE(ot.`due_date`) LIKE '%pp%' OR DATE(ot.`completion_date`) LIKE '%pp%' OR DATE(ot.`new_due_date`) LIKE '%pp%')
+
+==== ==== ==== ==== ==== 10:47:00 ==== ==== ==== ==== ====
+SELECT COUNT(*)
+									FROM bb_order_tasks ot
+			                        LEFT JOIN bb_users u ON assignee = u.id
+			                        LEFT JOIN bb_users us ON assigned_by = us.id
+			                        LEFT JOIN bb_task_status st ON ot.status = st.task_status_id
+			                        INNER JOIN bb_tasks_type tt ON tt.id = ot.task_type
+			                        WHERE  status =4 AND (assignee IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1) OR assigned_by IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1, 0) OR assigned_by IS NULL)  AND (u.name LIKE '%ppap%' OR us.name LIKE '%ppap%' OR 
+                                    ot.`order_id` LIKE '%ppap%' OR bs.`name` LIKE '%ppap%' OR 
+                                    tt.`tasks_type` LIKE '%ppap%' OR DATE(ot.`requested_date`) LIKE '%ppap%' OR DATE(ot.`assignment_date`) LIKE '%ppap%' OR DATE(ot.`due_date`) LIKE '%ppap%' OR DATE(ot.`completion_date`) LIKE '%ppap%' OR DATE(ot.`new_due_date`) LIKE '%ppap%')
+
+==== ==== ==== ==== ==== 10:47:00 ==== ==== ==== ==== ====
+SELECT ot.task_id AS id, bs.`name` AS bbb_sku, bs.`id` AS bbb_sku_id, ot.order_id AS request_id, tt.id AS id_task_type, tt.tasks_type, u.name AS assignee, u.id AS assignee_id, us.name AS assigned_by, us.id AS assigned_by_id, DATE(requested_date) AS requested_date, DATE(assignment_date) AS assignment_date, DATE(due_date) AS due_date, DATE(completion_date) AS completion_date, DATE(new_due_date) AS new_due_date, st.name AS STATUS
+									FROM bb_order_tasks ot
+			                        LEFT JOIN bb_users u ON assignee = u.id
+			                        LEFT JOIN bb_users us ON assigned_by = us.id
+			                        LEFT JOIN bb_task_status st ON ot.status = st.task_status_id
+			                        LEFT JOIN bb_tasks_sku ts ON ts.`RequestID` = ot.`order_id`
+			                        LEFT JOIN bb_bbb_sku bs ON bs.`id` = ts.`bbb_sku_id`			                        
+			                        INNER JOIN bb_tasks_type tt ON tt.id = ot.task_type
+			                        WHERE   status =4 AND (assignee IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1) OR assigned_by IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1, 0) OR assigned_by IS NULL)  AND (u.name LIKE '%ppap%' OR us.name LIKE '%ppap%' OR 
+                                    ot.`order_id` LIKE '%ppap%' OR bs.`name` LIKE '%ppap%' OR 
+                                    tt.`tasks_type` LIKE '%ppap%' OR DATE(ot.`requested_date`) LIKE '%ppap%' OR DATE(ot.`assignment_date`) LIKE '%ppap%' OR DATE(ot.`due_date`) LIKE '%ppap%' OR DATE(ot.`completion_date`) LIKE '%ppap%' OR DATE(ot.`new_due_date`) LIKE '%ppap%')
+
+==== ==== ==== ==== ==== 10:47:00 ==== ==== ==== ==== ====
+SELECT COUNT(*)
+									FROM bb_order_tasks ot
+			                        LEFT JOIN bb_users u ON assignee = u.id
+			                        LEFT JOIN bb_users us ON assigned_by = us.id
+			                        LEFT JOIN bb_task_status st ON ot.status = st.task_status_id
+			                        INNER JOIN bb_tasks_type tt ON tt.id = ot.task_type
+			                        WHERE  status =4 AND (assignee IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1) OR assigned_by IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1, 0) OR assigned_by IS NULL)  AND (u.name LIKE '%ppap%' OR us.name LIKE '%ppap%' OR 
+                                    ot.`order_id` LIKE '%ppap%' OR bs.`name` LIKE '%ppap%' OR 
+                                    tt.`tasks_type` LIKE '%ppap%' OR DATE(ot.`requested_date`) LIKE '%ppap%' OR DATE(ot.`assignment_date`) LIKE '%ppap%' OR DATE(ot.`due_date`) LIKE '%ppap%' OR DATE(ot.`completion_date`) LIKE '%ppap%' OR DATE(ot.`new_due_date`) LIKE '%ppap%')
+
+==== ==== ==== ==== ==== 10:47:00 ==== ==== ==== ==== ====
+SELECT ot.task_id AS id, bs.`name` AS bbb_sku, bs.`id` AS bbb_sku_id, ot.order_id AS request_id, tt.id AS id_task_type, tt.tasks_type, u.name AS assignee, u.id AS assignee_id, us.name AS assigned_by, us.id AS assigned_by_id, DATE(requested_date) AS requested_date, DATE(assignment_date) AS assignment_date, DATE(due_date) AS due_date, DATE(completion_date) AS completion_date, DATE(new_due_date) AS new_due_date, st.name AS STATUS
+									FROM bb_order_tasks ot
+			                        LEFT JOIN bb_users u ON assignee = u.id
+			                        LEFT JOIN bb_users us ON assigned_by = us.id
+			                        LEFT JOIN bb_task_status st ON ot.status = st.task_status_id
+			                        LEFT JOIN bb_tasks_sku ts ON ts.`RequestID` = ot.`order_id`
+			                        LEFT JOIN bb_bbb_sku bs ON bs.`id` = ts.`bbb_sku_id`			                        
+			                        INNER JOIN bb_tasks_type tt ON tt.id = ot.task_type
+			                        WHERE   status =4 AND (assignee IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1) OR assigned_by IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1, 0) OR assigned_by IS NULL)  AND (u.name LIKE '%ppap%' OR us.name LIKE '%ppap%' OR 
+                                    ot.`order_id` LIKE '%ppap%' OR bs.`name` LIKE '%ppap%' OR 
+                                    tt.`tasks_type` LIKE '%ppap%' OR DATE(ot.`requested_date`) LIKE '%ppap%' OR DATE(ot.`assignment_date`) LIKE '%ppap%' OR DATE(ot.`due_date`) LIKE '%ppap%' OR DATE(ot.`completion_date`) LIKE '%ppap%' OR DATE(ot.`new_due_date`) LIKE '%ppap%')
+
+==== ==== ==== ==== ==== 11:35:02 ==== ==== ==== ==== ====
+SELECT COUNT(*)
+									FROM bb_order_tasks ot
+			                        LEFT JOIN bb_users u ON assignee = u.id
+			                        LEFT JOIN bb_users us ON assigned_by = us.id
+			                        LEFT JOIN bb_task_status st ON ot.status = st.task_status_id
+			                        INNER JOIN bb_tasks_type tt ON tt.id = ot.task_type
+			                        WHERE  status =4 AND (assignee IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1) OR assigned_by IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1, 0) OR assigned_by IS NULL)  AND (u.name LIKE '%%' OR us.name LIKE '%%' OR 
+                                    ot.`order_id` LIKE '%%' OR bs.`name` LIKE '%%' OR 
+                                    tt.`tasks_type` LIKE '%%' OR DATE(ot.`requested_date`) LIKE '%%' OR DATE(ot.`assignment_date`) LIKE '%%' OR DATE(ot.`due_date`) LIKE '%%' OR DATE(ot.`completion_date`) LIKE '%%' OR DATE(ot.`new_due_date`) LIKE '%%')
+
+==== ==== ==== ==== ==== 11:35:02 ==== ==== ==== ==== ====
+SELECT ot.task_id AS id, bs.`name` AS bbb_sku, bs.`id` AS bbb_sku_id, ot.order_id AS request_id, tt.id AS id_task_type, tt.tasks_type, u.name AS assignee, u.id AS assignee_id, us.name AS assigned_by, us.id AS assigned_by_id, DATE(requested_date) AS requested_date, DATE(assignment_date) AS assignment_date, DATE(due_date) AS due_date, DATE(completion_date) AS completion_date, DATE(new_due_date) AS new_due_date, st.name AS STATUS
+									FROM bb_order_tasks ot
+			                        LEFT JOIN bb_users u ON assignee = u.id
+			                        LEFT JOIN bb_users us ON assigned_by = us.id
+			                        LEFT JOIN bb_task_status st ON ot.status = st.task_status_id
+			                        LEFT JOIN bb_tasks_sku ts ON ts.`RequestID` = ot.`order_id`
+			                        LEFT JOIN bb_bbb_sku bs ON bs.`id` = ts.`bbb_sku_id`			                        
+			                        INNER JOIN bb_tasks_type tt ON tt.id = ot.task_type
+			                        WHERE   status =4 AND (assignee IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1) OR assigned_by IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1, 0) OR assigned_by IS NULL)  AND (u.name LIKE '%%' OR us.name LIKE '%%' OR 
+                                    ot.`order_id` LIKE '%%' OR bs.`name` LIKE '%%' OR 
+                                    tt.`tasks_type` LIKE '%%' OR DATE(ot.`requested_date`) LIKE '%%' OR DATE(ot.`assignment_date`) LIKE '%%' OR DATE(ot.`due_date`) LIKE '%%' OR DATE(ot.`completion_date`) LIKE '%%' OR DATE(ot.`new_due_date`) LIKE '%%')
+
+==== ==== ==== ==== ==== 15:43:26 ==== ==== ==== ==== ====
+SELECT COUNT(*)
+									FROM bb_order_tasks ot
+			                        LEFT JOIN bb_users u ON assignee = u.id
+			                        LEFT JOIN bb_users us ON assigned_by = us.id
+			                        LEFT JOIN bb_task_status st ON ot.status = st.task_status_id
+			                        INNER JOIN bb_tasks_type tt ON tt.id = ot.task_type
+			                        WHERE  status =4 AND (assignee IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1) OR assigned_by IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1, 0) OR assigned_by IS NULL)  AND (u.name LIKE '%%' OR us.name LIKE '%%' OR 
+                                    ot.`order_id` LIKE '%%' OR bs.`name` LIKE '%%' OR 
+                                    tt.`tasks_type` LIKE '%%' OR DATE(ot.`requested_date`) LIKE '%%' OR DATE(ot.`assignment_date`) LIKE '%%' OR DATE(ot.`due_date`) LIKE '%%' OR DATE(ot.`completion_date`) LIKE '%%' OR DATE(ot.`new_due_date`) LIKE '%%')
+
+==== ==== ==== ==== ==== 15:43:26 ==== ==== ==== ==== ====
+SELECT ot.task_id AS id, bs.`name` AS bbb_sku, bs.`id` AS bbb_sku_id, ot.order_id AS request_id, tt.id AS id_task_type, tt.tasks_type, u.name AS assignee, u.id AS assignee_id, us.name AS assigned_by, us.id AS assigned_by_id, DATE(requested_date) AS requested_date, DATE(assignment_date) AS assignment_date, DATE(due_date) AS due_date, DATE(completion_date) AS completion_date, DATE(new_due_date) AS new_due_date, st.name AS STATUS
+									FROM bb_order_tasks ot
+			                        LEFT JOIN bb_users u ON assignee = u.id
+			                        LEFT JOIN bb_users us ON assigned_by = us.id
+			                        LEFT JOIN bb_task_status st ON ot.status = st.task_status_id
+			                        LEFT JOIN bb_tasks_sku ts ON ts.`RequestID` = ot.`order_id`
+			                        LEFT JOIN bb_bbb_sku bs ON bs.`id` = ts.`bbb_sku_id`			                        
+			                        INNER JOIN bb_tasks_type tt ON tt.id = ot.task_type
+			                        WHERE   status =4 AND (assignee IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1) OR assigned_by IN (6,133,7,58,62,86,116,134,140,40,42,46,47,55,59,60,61,63,64,66,87,89,90,92,94,100,108,117,135,136,39,41,43,44,48,53,56,65,67,68,69,70,72,88,93,95,96,97,99,101,102,103,104,105,107,110,111,112,113,115,118,119,126,71,73,74,75,76,77,78,81,82,83,84,85,120,121,124,125,149,1, 0) OR assigned_by IS NULL)  AND (u.name LIKE '%%' OR us.name LIKE '%%' OR 
+                                    ot.`order_id` LIKE '%%' OR bs.`name` LIKE '%%' OR 
+                                    tt.`tasks_type` LIKE '%%' OR DATE(ot.`requested_date`) LIKE '%%' OR DATE(ot.`assignment_date`) LIKE '%%' OR DATE(ot.`due_date`) LIKE '%%' OR DATE(ot.`completion_date`) LIKE '%%' OR DATE(ot.`new_due_date`) LIKE '%%')
+

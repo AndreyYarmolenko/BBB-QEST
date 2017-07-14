@@ -1,0 +1,339 @@
+.exit{
+    background-image: url(../img/close.png) !important;
+}
+.user{
+    background-image: url(../img/male2.png) !important;
+}
+.settings{
+	background-image: url(../img/equipment.png) !important;
+}
+.globe{
+	background-image: url(../img/globe.png) !important;
+}
+.key{
+	background-image: url(../img/key.png) !important;
+}
+.add{
+	background-image: url(../img/add.png) !important;
+}
+.delete{
+	background-image: url(../img/delete.png) !important;
+}
+.edit{
+	background-image: url(../img/edit.png) !important;
+}
+.export{
+	background-image: url(../img/load.png) !important;
+}
+.save{
+	background-image: url(../img/save2.png) !important;
+}
+.cancel{
+	background-image: url(../img/cancel.png) !important;
+}
+.auto{
+	background-image: url(../img/delivery.png) !important;
+}
+.trailer{
+	background-image: url(../img/delivery2.png) !important;
+}
+.autotrailer{
+	background-image: url(../img/delivery3.png) !important;
+}
+.cabinet{
+	background-image: url(../img/door.png) !important;
+}
+.info{
+	background-image: url(../img/table.png) !important;
+}
+.block{
+	background-image: url(../img/cancel.png) !important;
+}
+.upload-icon{
+	background-image: url(../img/image_add.png) !important;
+}
+.uploadshow{
+	background-image: url(../img/eye.png) !important;
+}
+.msg{
+background-image: url(../img/savesend.png) !important;
+}
+.list{
+background-image: url(../img/list.png) !important;
+}
+.search{
+background-image: url(../img/_search.png) !important;
+}
+.clear{
+background-image: url(../img/delete_blue.png) !important;
+}
+.showpic{
+  background-image: url(../img/showpic.png) !important;
+}
+
+.red_bg{
+  background-color:  #F08080!important;
+}
+
+.green_bg{
+  background-color: #90EE90!important;
+}
+
+.grey_bg{
+  background-color: #C0C0C0!important;
+}
+
+.blue_bg{
+  background-color: #87CEEB!important;
+}
+
+.light_blue_bg{
+  background-color: #B0E0E6!important;
+}
+
+.info_ico{
+  background-image: url(../img/info_ico.png) !important;
+}
+
+.approved{
+  background-image: url(../img/approved.png) !important;
+}
+
+.rejected{
+  background-image: url(../img/rejected.png) !important;
+}
+
+.work{
+  background-image: url(../img/work.png) !important;
+}
+
+.new_status{
+  background-image: url(../img/new_status.png) !important;
+}
+
+
+.ImageGalery{
+  max-width: 95%!important;
+  max-height: 90%!important;
+  margin:auto!important;
+}
+
+.uploadStyle {
+  padding: 10px;
+  float: left;
+  width: 250px;
+  height: 250px;
+  margin: 5px;
+  border: 1px solid #00BFFF;
+}
+
+.caption_title {
+  width:100%;
+  padding: 5px;
+  background: #00BFFF;
+  float: top;
+  text-align: center;
+  color: #fff;
+}
+
+/*
+ * GridFilters Styles
+ */
+.ux-filtered-column {
+    font-style: italic;
+    font-weight: bold;
+}
+
+.ux-gridfilter-text-icon {
+    background-image: url(../img/find.png) !important;
+}
+/*
+ * RangeMenu Styles
+ */
+.ux-rangemenu-icon {
+    display: block;
+    height: 16px;
+    background: no-repeat 5px center;
+}
+
+.ux-rangemenu-gt {
+    background-image: url(../img/greater_than.png) !important;
+}
+
+.ux-rangemenu-lt {
+    background-image: url(../img/less_than.png) !important;
+}
+
+.ux-rangemenu-eq {
+    background-image: url(../img/equals.png) !important;
+}
+.center-icon{
+   display:block;
+   margin:0 auto;
+   text-align:center;
+   cursor:hand;
+   background-image: url(../img/eye.png) !important;
+}
+.hide-icon{
+   display:none;
+   margin:0 auto;
+   text-align:center;
+   cursor:hand;
+   background-image: none;
+}
+
+.red .x-grid-cell {
+    background-color: red !important;
+}
+
+.x-grid-row-editor .x-panel-body{
+    border-top: 1px solid #0071FF!important;
+    border-bottom: 1px solid #0071FF!important;
+}
+.x-grid-row-editor-buttons {
+    border-color: #0071FF;
+}
+
+.msgbox{
+    text-align: center !important;
+}
+
+.message {
+	color:#157fcc;
+	font-size: 20px;
+	text-align:center;
+	text-align: center !important;
+}
+
+
+
+input[readonly="readonly"], textarea[readonly="readonly"]{
+   background: #eeeeff;
+    color: #4c4c4c;
+    cursor: default;
+}
+
+.image_progress_h {
+  position: relative;
+  height: auto;
+  width: 100% !important;
+}
+
+.image_progress_v {
+  position: relative;
+  width: auto;
+  height: 100% !important;
+}
+
+.daysCount, .daysCount-Warning{
+    position: relative;
+    margin: 0 0 8px 4px;
+}
+
+.daysCount > div > div, .daysCount-Warning > div > div{
+    background: #0071FF;
+    color: white;
+    display: table-cell;
+    vertical-align: middle;
+    font-size: .7em;
+    border-radius: 16px;
+    height: 32px;
+    width: 32px;
+    text-align: center;
+}
+
+.daysCount-Warning > div > div{
+    background: #ff2200;
+}
+
+.pr_spi_border_all{
+    box-sizing: border-box;
+    border: 2px solid #4c4c4c;
+}
+.pr_spi_border_right{
+    box-sizing: border-box;
+    border-right: 2px solid #4c4c4c;
+}
+.pr_spi_border_bottom{
+    box-sizing: border-box;
+    border-bottom: 2px solid #4c4c4c;
+}
+
+.pr_spi_header{
+    padding: 0;
+    margin: 0;
+}
+
+.pr_spi_header > div > div{
+    color: #4c4c4c;
+    font-size: .75em;
+    margin: 0;
+    padding: 0 1em;
+    min-height: 0;
+    text-transform: uppercase;
+}
+
+.pr_spi_input > div > div{
+    border: none;
+    border-bottom: 1px solid #d7d7d7;
+    outline: none;
+    padding: .25em .75em;
+}
+.pr_spi_input > div input[readonly="readonly"]{
+    background: transparent;
+    color: black;
+}
+
+.pr_spi_displayfield > div > div{
+    border: none;
+    outline: none;
+    padding: .25em .75em;
+}
+.x-column-header-inner .x-column-header-text {
+    white-space: normal;
+}
+
+.x-column-header-inner {
+    line-height: normal;
+    text-align: center;
+}
+
+.screenReaderText { 
+  border: 0; 
+  clip: rect(0 0 0 0); 
+  height: 1px; 
+  margin: -1px; 
+  overflow: hidden; 
+  padding: 0; 
+  position: absolute; 
+  width: 1px; 
+}
+
+.col-href > div{
+    color: #2CAFE3;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.col-href > div:hover{
+    opacity: .8;
+}
+.version{
+    display: block;
+    position: absolute !important;
+    font-size: .7em !important;
+    left: 50%;
+    transform: translate(-50%, 0);
+    bottom: 0;
+}
+
+.exel_ico {
+  background-image: url(../img/exel.jpg) !important;
+}
+
+.use_blue{
+  background-image: url(../img/use_blue.png) !important;
+}
+
+.use {
+  background-image: url(../img/use.png) !important;
+}
